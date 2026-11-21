@@ -1,0 +1,137 @@
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Bootstrap Icons
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&display=swap");
+
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 60px; }
+
+body {
+    background: #0d0d0d;
+    color: #d9d9d9;
+}
+
+h1, h2, h3, .navbar-brand, .nav-link, .btn, .angka, .nomor {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+h2 { font-size: 2.8rem; margin-bottom: 1.5rem; }
+
+h2::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 0.8em;
+    margin-right: 16px;
+    background: #d40000;
+    transform: skewX(-20deg);
+}
+
+.navbar { background: linear-gradient(black, transparent); }
+.navbar-brand { font-size: 2rem; }
+.nav-link { color: white; font-size: 1.15rem; }
+.nav-link:hover { color: #ffd800; }
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.85)), url("../images/hero.jpg") center / cover;
+}
+
+.hero .container { position: relative; z-index: 1; }
+
+.hero h1 {
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.85;
+    text-shadow: 4px 4px 0 #d40000;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    background: #d40000;
+    border-top: 12px solid #ffd800;
+    clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
+}
+
+.btn { border-radius: 0; }
+.btn-danger { background: #d40000; border-color: #d40000; }
+.btn-danger:hover { background: #ffd800; border-color: #ffd800; color: black; }
+
+.foto-sejarah { box-shadow: 14px 14px 0 #d40000; }
+
+#achievements {
+    padding: 5rem 0 !important;
+    background: #d40000;
+    clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
+}
+
+.angka {
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    color: #ffd800;
+    line-height: 1;
+    text-shadow: 3px 3px 0 black;
+}
+
+.kartu {
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 0;
+    border-bottom: 5px solid #d40000 !important;
+}
+
+.foto-pembalap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 60% 100%;
+    border-radius: 0;
+    filter: grayscale(100%);
+    transition: filter 0.4s;
+}
+
+.kartu:hover .foto-pembalap { filter: none; }
+
+.nomor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #ffd800;
+    color: black;
+    font-size: 3rem;
+    line-height: 1.1;
+    padding: 0 30px 0 16px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 100%, 0 100%);
+}
+
+.kartu .card-title { font-size: 2rem; }
+.kartu .card-text { color: #aaa; }
+
+.foto-galeri { height: 450px; object-fit: cover; }
+.carousel { border-bottom: 6px solid #d40000; }
+
+.footer-merah {
+    background: #d40000;
+    border-top: 14px solid #ffd800;
+    text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse { background: black; padding: 15px; }
+    .foto-galeri { height: 300px; }
+}
